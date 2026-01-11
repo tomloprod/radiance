@@ -1,0 +1,71 @@
+{
+    "name": "tomloprod/radiance",
+    "description": "A deterministic mesh gradient avatar generator for PHP.",
+    "type": "library",
+    "keywords": [
+        "php",
+        "avatar",
+        "generator",
+        "mesh-gradient",
+        "deterministic",
+        "identicon",
+        "svg"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomás López",
+            "email": "tomloprod@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2.0",
+        "ext-mbstring": "*",
+        "tomloprod/colority": "^1.7.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.22.1",
+        "pestphp/pest": "^3.8.2",
+        "pestphp/pest-plugin-type-coverage": "^3.5.0",
+        "phpstan/phpstan": "^2.0.3",
+        "rector/rector": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tomloprod\\Radiance\\": "src/"
+        },
+        "files": [
+            "src/Support/RadianceAlias.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "lint": "pint",
+        "refactor": "rector",
+        "test:lint": "pint --test",
+        "test:refactor": "rector --dry-run",
+        "test:types": "phpstan analyse",
+        "test:type-coverage": "pest --type-coverage --min=100",
+        "test:unit": "pest --coverage --min=100",
+        "test": [
+            "@test:lint",
+            "@test:refactor",
+            "@test:types",
+            "@test:type-coverage",
+            "@test:unit"
+        ]
+    }
+}
