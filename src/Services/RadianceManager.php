@@ -121,6 +121,8 @@ final class RadianceManager
             $fontSize = (int) ($this->size * $ratio);
             $escapedText = htmlspecialchars($this->text, ENT_XML1, 'UTF-8');
 
+            $fontWeight = $this->fontWeight;
+
             $textElement = <<<SVG
                 <text
                     x="50%"
@@ -131,7 +133,7 @@ final class RadianceManager
                     fill-opacity="1"
                     font-family="{$fontFamilyWithFallbacks}"
                     font-size="{$fontSize}"
-                    font-weight="600"
+                    font-weight="{$fontWeight}"
                     filter="url(#{$filterId})"
                 >{$escapedText}</text>
             SVG;

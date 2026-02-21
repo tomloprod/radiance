@@ -143,6 +143,7 @@ $svg = radiance()
 | `fontFamily(string $font)` | Set the font-family for the text. | `monospace` |
 | `fontSizeRatio(float $ratio)` | Set font size as ratio of avatar size (0.01-1.0). Disables auto-sizing. | `0.5` |
 | `fontSizeRatioAuto(bool $enabled)` | Enable/disable automatic font sizing based on text length. | `true` |
+| `fontWeight(int $fontWeight)` | Set the weight of the used font. | `600` |
 | `textShadow(float $val)` | Set text shadow intensity. 0 = no shadow. | `1.0` |
 
 ### Pixel Pattern

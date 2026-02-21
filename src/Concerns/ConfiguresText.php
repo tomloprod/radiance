@@ -24,6 +24,11 @@ trait ConfiguresText
     private float $fontSizeRatio = 0.5;
 
     /**
+     * The font weight for the text.
+     */
+    private int $fontWeight = 600;
+
+    /**
      * The intensity of the text shadow.
      *
      * Minimum value is 0 (no shadow).
@@ -66,6 +71,16 @@ trait ConfiguresText
     {
         $this->fontSizeRatio = max(0.01, min(1.0, $ratio));
         $this->fontSizeRatioAuto = false;
+
+        return $this;
+    }
+
+    /**
+     * Set the font weight for the text.
+     */
+    public function fontWeight(int $fontWeight): self
+    {
+        $this->fontWeight = $fontWeight;
 
         return $this;
     }

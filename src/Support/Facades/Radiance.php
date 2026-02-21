@@ -22,6 +22,7 @@ use Tomloprod\Radiance\Services\RadianceManager;
  * @method static RadianceManager text(string $text)
  * @method static RadianceManager fontFamily(string $fontFamily)
  * @method static RadianceManager fontSizeRatio(float $ratio)
+ * @method static RadianceManager fontWeight(int $fontWeight)
  * @method static RadianceManager textShadow(float $intensity)
  * @method static RadianceManager fontSizeRatioAuto(bool $enabled = true)
  * @method static RadianceManager enablePixelPattern(bool $enable = true)

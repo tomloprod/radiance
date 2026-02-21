@@ -238,6 +238,16 @@ it('calculates font size from fontSizeRatio', function (): void {
     expect($svg)->toContain('font-size="100"');
 });
 
+it('allows customizing font weight', function (): void {
+    $svg = RadianceManager::instance()
+        ->seed('test')
+        ->text('XY')
+        ->fontWeight(400)
+        ->toSvg();
+
+    expect($svg)->toContain('font-weight="400"');
+});
+
 it('uses auto fontSizeRatio by default', function (): void {
     $svg = RadianceManager::instance()
         ->seed('test')
